@@ -5,13 +5,13 @@ require 'form.php';
 
 ?>
 
-<h1>Registration Form</h1>
+<h1 class="mb-5">Registration Form</h1>
 
 <form action="<?= $_SERVER['PHP_SELF']; ?>" method="POST">
   <div class="row">
     <div class="col">
       <div class="form-group">
-        <label for="first_name">First Name</label>
+        <label for="first_name">First Name <span class="text-danger">*</span></label>
         <input type="text" class="form-control" id="first_name" name="first_name" value="<?= $firstName; ?>" placeholder="First name" required>
         <span class="text-danger"><?= $firstNameError; ?></span>
       </div>
@@ -28,14 +28,14 @@ require 'form.php';
   <div class="row">
     <div class="col">
       <div class="form-group">
-        <label for="mobile_number">Mobile Number</label>
+        <label for="mobile_number">Mobile Number <span class="text-danger">*</span></label>
         <input type="tel" class="form-control" id="mobile_number" name="mobile_number" value="<?= $mobileNumber; ?>" placeholder="Mobile Number" required>
         <span class="text-danger"><?= $mobileNumberError; ?></span>
       </div>
     </div>
     <div class="col">
       <div class="form-group">
-        <label for="email">Email</label>
+        <label for="email">Email <span class="text-danger">*</span></label>
         <input type="email" class="form-control" id="email" name="email" value="<?= $email; ?>" placeholder="Email" required>
         <span class="text-danger"><?= $emailError; ?></span>
       </div>
@@ -45,14 +45,14 @@ require 'form.php';
   <div class="row">
     <div class="col">
       <div class="form-group">
-        <label for="password">Password</label>
+        <label for="password">Password <span class="text-danger">*</span></label>
         <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
         <span class="text-danger"><?= $passwordError; ?></span>
       </div>
     </div>
     <div class="col">
       <div class="form-group">
-        <label for="confirm_password">Confirm Password</label>
+        <label for="confirm_password">Confirm Password <span class="text-danger">*</span></label>
         <input type="password" class="form-control" id="confirm_password" name="confirm_password" placeholder="Confirm Password" required>
         <span class="text-danger"><?= $confirmPasswordError; ?></span>
       </div>
@@ -62,7 +62,7 @@ require 'form.php';
 
   <fieldset class="form-group">
     <div class="row">
-      <legend class="col-form-label col-sm-2 pt-0">Require Class:</legend>
+      <legend class="col-form-label col-sm-2 pt-0">Require Class: <span class="text-danger">*</span></legend>
       <div class="col-sm-10">
         <div class="form-check form-check-inline">
           <input class="form-check-input" type="radio" name="require_class" id="business" value="business" <?php if (isset($_POST['require_class']) && $_POST['require_class'] === "business") {
@@ -116,6 +116,7 @@ require 'form.php';
   </section>
 
   <button type="submit" class="btn btn-info">Register</button>
+  <a href="<?= $config['app_url'] ?>login.php">Already have an account?</a>
 
 </form>
 

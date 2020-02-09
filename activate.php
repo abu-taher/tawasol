@@ -35,7 +35,7 @@ if (isset($_SESSION['email'])) {
       <input type="text" class="form-control" id="activation" name="activation" required>
       <span class="text-danger"><?= $verification_error; ?></span>
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary">Verify</button>
   </form>
 
 <?php } else {

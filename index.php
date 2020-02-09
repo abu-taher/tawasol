@@ -11,10 +11,6 @@ $email = $_SESSION['email'];
 $userDetails = $mysqli->query("SELECT * FROM users WHERE email = '$email' limit 1");
 $foundUser = $userDetails->fetch_assoc();
 
-echo '<pre>';
-var_dump($foundUser);
-echo '</pre>';
-
 ?>
 
 <table class="table table-hover">
